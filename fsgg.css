@@ -1,10 +1,115 @@
+@media (min-width: 320px) and (max-width: 480px) {
+  section {
+    width: 320px;
+    margin: 10px auto; }
+    section .titlePanel {
+      display: none; }
+    section .fleetHolder {
+      position: relative;
+      display: block;
+      height: 80px; }
+      section .fleetHolder .fleetStatus p {
+        position: absolute;
+        display: block;
+        left: 90px;
+        margin: 0px;
+        padding: 20px; }
+      section .fleetHolder .fleetStatus .img-placeholder {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        vertical-align: middle;
+        height: 74px;
+        width: 80px; }
+    section .inputContainer {
+      display: block;
+      height: auto;
+      width: 320px; }
+
+  .controls {
+    position: relative;
+    display: block;
+    margin: 5px; }
+    .controls .game-button-main {
+      position: relative;
+      display: inline-block; }
+    .controls .torpedo {
+      display: none; } }
+@media (min-width: 481px) and (max-width: 767px) {
+  section {
+    width: 480px;
+    height: 400px;
+    margin: 20px auto; }
+    section .titlePanel {
+      display: block; }
+    section .fleetHolder {
+      position: relative;
+      display: inline-block;
+      width: 100px;
+      height: 240px;
+      margin: 0px 5px;
+      vertical-align: top; }
+      section .fleetHolder .fleetStatus {
+        position: relative;
+        display: inline-block; }
+        section .fleetHolder .fleetStatus .img-placeholder {
+          position: relative;
+          display: block;
+          margin: 5px auto;
+          height: 80px;
+          width: 80px; }
+    section .inputContainer {
+      display: inline-block;
+      height: 240px;
+      width: 320px;
+      vertical-align: top; }
+
+  .controls {
+    position: relative;
+    display: block;
+    margin: 5px; }
+    .controls .torpedo {
+      display: inline-block; } }
+@media (min-width: 768px) {
+  section {
+    width: 80%;
+    margin: 20px auto; }
+    section .titlePanel {
+      display: block; }
+    section .fleetHolder {
+      position: relative;
+      display: inline-block;
+      width: 100px;
+      height: 270px;
+      margin: 0px 5px;
+      vertical-align: top; }
+      section .fleetHolder .fleetStatus .img-placeholder {
+        position: relative;
+        display: block;
+        margin: 5px auto;
+        height: 80px;
+        width: 80px; }
+    section .inputContainer {
+      display: inline-block;
+      width: 400px;
+      height: 270px;
+      vertical-align: top; }
+    section .controls {
+      display: inline-block;
+      width: 90px;
+      height: auto;
+      text-align: center; }
+      section .controls .game-button-main {
+        margin: 5px; } }
 body {
   background-image: url("bg_landscape.jpg");
   background-size: cover;
   background-position: center;
   background-origin: border-box;
   background-repeat: no-repeat;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
 
 .freezing {
   color: aqua; }
@@ -21,108 +126,91 @@ body {
 section {
   position: relative;
   display: block;
-  margin: 40px auto;
   padding: 10px;
-  width: 320px;
   height: 450px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.75); }
-  section .main {
-    position: relative;
-    display: block;
-    margin: 5px auto;
-    width: 320px;
-    height: auto; }
-    section .main h3 {
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s; }
+  section .titlePanel {
+    position: relative; }
+    section .titlePanel h3 {
       color: white; }
-    section .main button {
-      height: 80px;
-      width: 80px;
-      border-radius: 100%;
-      border: 1px solid black;
-      transition: all 0.1s;
-      -webkit-transition: all 0.1s; }
-    section .main button:active {
-      box-shadow: 0px 0px 3px 3px black inset; }
-    section .main .hint {
-      background-color: #ffc600; }
-    section .main .ping {
-      background-color: green; }
-    section .main .reset {
-      background-color: red; }
-    section .main .ping:active {
-      background-color: lightgreen; }
-    section .main .torpedo-disabled {
-      display: none;
-      background-color: rgba(255, 0, 0, 0.5);
-      color: rgba(0, 0, 0, 0.5); }
-    section .main .torpedo-enabled {
-      background-color: red; }
-    section .main .fleetStatus {
+  section .game-button-main {
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    border: 1px solid black;
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s; }
+  section .game-button-main:focus {
+    outline: none; }
+  section .game-button-main:active {
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5) inset; }
+  section .hint {
+    background-color: #ffc600; }
+  section .ping {
+    background-color: green; }
+  section .reset {
+    background-color: orangered; }
+  section .ping:active {
+    background-color: lightgreen; }
+  section .torpedo {
+    background-color: rgba(255, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.5); }
+  section .torpedo-enabled {
+    background-color: red; }
+  section .fleetHolder {
+    background-color: red;
+    z-index: 400; }
+    section .fleetHolder .fleetStatus {
       position: relative;
       display: block;
-      z-index: 400;
-      margin: 0px auto;
-      height: 80px;
-      background-color: red; }
-      section .main .fleetStatus p {
-        position: absolute;
-        display: block;
-        left: 90px;
-        margin: 0px;
-        padding: 20px; }
-      section .main .fleetStatus h1 {
+      margin: 0px auto; }
+      section .fleetHolder .fleetStatus h1 {
         position: absolute;
         left: 100px;
         font-size: 3em;
         margin: 0px; }
-      section .main .fleetStatus .img-placeholder {
-        position: absolute;
-        top: 3px;
-        left: 3px;
-        vertical-align: middle;
-        height: 74px;
-        width: 80px;
+      section .fleetHolder .fleetStatus .img-placeholder {
         background-color: #fff; }
-    section .main .inputContainer {
-      position: relative;
-      display: block;
-      height: auto;
-      background-color: green;
-      text-align: center; }
-      section .main .inputContainer input {
-        margin: 15px auto;
-        height: 100px;
-        width: 50%;
-        text-align: center;
-        font-size: 3em;
-        border-radius: 10px;
-        border: 2px solid black; }
-      section .main .inputContainer .buoy-message {
-        position: absolute;
-        display: none;
-        top: 0px;
-        left: 0px;
-        z-index: 500;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(234, 19, 20, 0.5);
-        transition: all 0.5s;
-        -webkit-transition: all 0.5s; }
-        section .main .inputContainer .buoy-message h2 {
-          position: relative;
-          display: block;
-          margin-top: 50px; }
-      section .main .inputContainer .buoys-used {
+  section .inputContainer {
+    position: relative;
+    background-color: green;
+    text-align: center; }
+    section .inputContainer input {
+      margin: 15px auto;
+      height: 100px;
+      width: 50%;
+      text-align: center;
+      font-size: 3em;
+      border-radius: 10px;
+      border: 2px solid black; }
+    section .inputContainer .buoy-message {
+      position: absolute;
+      display: none;
+      top: 0px;
+      left: 0px;
+      z-index: 500;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(234, 19, 20, 0.5);
+      transition: all 0.5s;
+      -webkit-transition: all 0.5s; }
+      section .inputContainer .buoy-message h2 {
         position: relative;
         display: block;
-        height: 75px;
-        border: 1px solid cyan;
-        overflow-y: scroll; }
-        section .main .inputContainer .buoys-used p .guess {
-          position: relative;
-          margin: 0px;
-          padding: 5px;
-          font-size: 1.2em; }
+        margin-top: 50px; }
+    section .inputContainer .buoys-used {
+      position: relative;
+      display: block;
+      height: 75px;
+      border: 1px solid cyan;
+      overflow-y: scroll; }
+      section .inputContainer .buoys-used p .guess {
+        position: relative;
+        margin: 0px;
+        padding: 5px;
+        font-size: 1.2em; }
 
 /*# sourceMappingURL=fsgg.css.map */

@@ -10,32 +10,30 @@
   </head>
   <body>
     <section>
-      <header class="main">
+      <header class="titlePanel">
         <h3>Sink the Submarine!</h3>
       </header>
-      <div class="main">
+      <div class="fleetHolder">
         <div class="fleetStatus">
           <div class="img-placeholder"></div>
           <p>25 / 30</p>
 
         </div>
       </div>
-      <div class="main">
-        <div class="inputContainer">  
-          <input type="text" value="" maxlength="3"></input>
-          <div class="buoys-used">
-            <p class="guess"><span class="warm"> 12</span><span class="cold"> 14</span><span class="freezing"> 09</span><span class="hot"> 92</span> 34 95 dd dd d dd d dd ddd dd d d dd dd dd dd dd</p>
-          </div>
-          <div class="buoy-message">
-            <h2>That buoy is arctic cold!</h2>
-          </div>
+      <div class="inputContainer">  
+        <input type="text" value="" maxlength="3"></input>
+        <div class="buoys-used">
+          <p class="guess"><span class="warm"> 12</span><span class="cold"> 14</span><span class="freezing"> 09</span><span class="hot"> 92</span> 34 95 dd dd d dd d dd ddd dd d d dd dd dd dd dd</p>
+        </div>
+        <div class="buoy-message">
+          <h2>That buoy is arctic cold!</h2>
         </div>
       </div>
-      <footer class="main">
-        <button class="ping">PING</button>
-        <button class="hint">HINT</button>
-        <button class="reset">RESTART</button>        
-        <button class="torpedo-disabled" disabled="true">FIRE</button>
+      <footer class="controls">
+        <button class="game-button-main ping">PING</button>
+        <button class="game-button-main hint">HINT</button>
+        <button class="game-button-main reset">RESET</button>        
+        <!--<button class="game-button-main torpedo" disabled="true">FIRE</button>-->
       </footer>
     </section>
     <!--<script type="text/javascript" src="jquery.js"></script>
