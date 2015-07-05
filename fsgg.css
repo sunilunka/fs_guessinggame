@@ -1,19 +1,46 @@
 body {
-  background-color: black; }
+  background-image: url("bg_landscape.jpg");
+  background-size: cover;
+  background-position: center;
+  background-origin: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
   body section {
     position: relative;
     display: block;
-    width: 100%;
-    text-align: center; }
+    margin: 40px auto;
+    padding: 10px;
+    width: 320px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.75); }
     body section .main {
       position: relative;
       display: block;
       margin: 5px auto;
       width: 320px;
-      height: 100%;
-      background-color: rgba(56, 75, 234, 0.75); }
+      height: auto; }
       body section .main h3 {
         color: white; }
+      body section .main button {
+        height: 80px;
+        width: 80px;
+        border-radius: 100%;
+        border: 1px solid black;
+        transition: all 0.1s;
+        -webkit-transition: all 0.1s; }
+      body section .main button:active {
+        box-shadow: 0px 0px 3px 3px black inset; }
+      body section .main .hint {
+        background-color: #ffc600; }
+      body section .main .ping {
+        background-color: green; }
+      body section .main .ping:active {
+        background-color: lightgreen; }
+      body section .main .torpedo-disabled {
+        background-color: rgba(255, 0, 0, 0.5);
+        color: rgba(0, 0, 0, 0.5); }
+      body section .main .torpedo-enabled {
+        background-color: red; }
       body section .main .fleetStatus {
         position: relative;
         display: block;
@@ -22,27 +49,44 @@ body {
         height: 80px;
         background-color: red; }
         body section .main .fleetStatus p {
-          position: relative;
+          position: absolute;
           display: block;
+          left: 90px;
           margin: 0px;
           padding: 20px; }
+        body section .main .fleetStatus h1 {
+          position: absolute;
+          left: 100px;
+          font-size: 3em;
+          margin: 0px; }
+        body section .main .fleetStatus .img-placeholder {
+          position: absolute;
+          top: 3px;
+          left: 3px;
+          vertical-align: middle;
+          height: 74px;
+          width: 80px;
+          background-color: #fff; }
       body section .main .inputContainer {
         position: relative;
         display: block;
-        height: 200px;
+        height: auto;
         background-color: green;
         text-align: center; }
         body section .main .inputContainer input {
           margin: 30px auto;
-          height: 50%;
+          height: 100px;
           width: 50%;
           text-align: center;
           font-size: 3em;
           border-radius: 10px;
           border: 2px solid black; }
-        body section .main .inputContainer .message {
+        body section .main .inputContainer h2 {
+          margin: 2px;
+          padding: 5px; }
+        body section .main .inputContainer .buoy-message {
           position: absolute;
-          display: block;
+          display: none;
           top: 0px;
           left: 0px;
           z-index: 500;
@@ -51,7 +95,7 @@ body {
           background-color: rgba(234, 19, 20, 0.5);
           transition: all 0.5s;
           -webkit-transition: all 0.5s; }
-          body section .main .inputContainer .message h2 {
+          body section .main .inputContainer .buoy-message h2 {
             position: relative;
             display: block;
             margin-top: 50px; }
