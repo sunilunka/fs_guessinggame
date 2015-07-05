@@ -1,31 +1,31 @@
 @media (min-width: 320px) and (max-width: 480px) {
-  section {
+  .game-panel {
     width: 320px;
     margin: 10px auto; }
-    section .titlePanel {
+    .game-panel .titlePanel {
       display: none; }
-    section .fleetHolder {
+    .game-panel .fleetHolder {
       position: relative;
       display: block;
       height: 80px; }
-      section .fleetHolder .fleetStatus p {
+      .game-panel .fleetHolder .fleetStatus p {
         position: absolute;
         display: block;
         left: 90px;
         margin: 0px;
         padding: 20px; }
-      section .fleetHolder .fleetStatus .img-placeholder {
+      .game-panel .fleetHolder .fleetStatus .img-placeholder {
         position: absolute;
         top: 3px;
         left: 3px;
         vertical-align: middle;
         height: 74px;
         width: 80px; }
-    section .inputContainer {
+    .game-panel .inputContainer {
       display: block;
       height: 230px;
       width: 320px; }
-      section .inputContainer .buoys-used {
+      .game-panel .inputContainer .buoys-used {
         height: 75px; }
 
   .controls {
@@ -38,34 +38,34 @@
     .controls .torpedo {
       display: none; } }
 @media (min-width: 481px) and (max-width: 767px) {
-  section {
+  .game-panel {
     width: 480px;
     height: 400px;
     margin: 20px auto; }
-    section .titlePanel {
+    .game-panel .titlePanel {
       display: block; }
-    section .fleetHolder {
+    .game-panel .fleetHolder {
       position: relative;
       display: inline-block;
       width: 100px;
       height: 240px;
       margin: 0px 5px;
       vertical-align: top; }
-      section .fleetHolder .fleetStatus {
+      .game-panel .fleetHolder .fleetStatus {
         position: relative;
         display: inline-block; }
-        section .fleetHolder .fleetStatus .img-placeholder {
+        .game-panel .fleetHolder .fleetStatus .img-placeholder {
           position: relative;
           display: block;
           margin: 5px auto;
           height: 80px;
           width: 80px; }
-    section .inputContainer {
+    .game-panel .inputContainer {
       display: inline-block;
       height: 240px;
       width: 320px;
       vertical-align: top; }
-      section .inputContainer .buoys-used {
+      .game-panel .inputContainer .buoys-used {
         height: 75px; }
 
   .controls {
@@ -75,37 +75,37 @@
     .controls .torpedo {
       display: inline-block; } }
 @media (min-width: 768px) {
-  section {
+  .game-panel {
     width: 80%;
     margin: 20px auto; }
-    section .titlePanel {
+    .game-panel .titlePanel {
       display: block; }
-    section .fleetHolder {
+    .game-panel .fleetHolder {
       position: relative;
       display: inline-block;
       width: 100px;
       height: 270px;
       margin: 0px 5px;
       vertical-align: top; }
-      section .fleetHolder .fleetStatus .img-placeholder {
+      .game-panel .fleetHolder .fleetStatus .img-placeholder {
         position: relative;
         display: block;
         margin: 5px auto;
         height: 80px;
         width: 80px; }
-    section .inputContainer {
+    .game-panel .inputContainer {
       display: inline-block;
       width: 400px;
       height: 270px;
       vertical-align: top; }
-      section .inputContainer .buoys-used {
+      .game-panel .inputContainer .buoys-used {
         height: 110px; }
-    section .controls {
+    .game-panel .controls {
       display: inline-block;
       width: 90px;
       height: auto;
       text-align: center; }
-      section .controls .game-button-main {
+      .game-panel .controls .game-button-main {
         margin: 5px; } }
 body {
   background-image: url("bg_landscape.jpg");
@@ -115,7 +115,8 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   box-sizing: border-box;
-  -webkit-box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+  font-family: helvetica, arial, courier; }
 
 .freezing {
   color: aqua; }
@@ -129,7 +130,7 @@ body {
 .hot {
   color: red-orange; }
 
-section {
+.game-panel {
   position: relative;
   display: block;
   padding: 10px;
@@ -138,29 +139,29 @@ section {
   background-color: rgba(0, 0, 0, 0.75);
   transition: all 0.5s;
   -webkit-transition: all 0.5s; }
-  section .titlePanel {
+  .game-panel .titlePanel {
     position: relative; }
-    section .titlePanel h3 {
+    .game-panel .titlePanel h3 {
       color: white; }
-  section .fleetHolder {
+  .game-panel .fleetHolder {
     background-color: red;
     z-index: 400; }
-    section .fleetHolder .fleetStatus {
+    .game-panel .fleetHolder .fleetStatus {
       position: relative;
       display: block;
       margin: 0px auto; }
-      section .fleetHolder .fleetStatus h1 {
+      .game-panel .fleetHolder .fleetStatus h1 {
         position: absolute;
         left: 100px;
         font-size: 3em;
         margin: 0px; }
-      section .fleetHolder .fleetStatus .img-placeholder {
+      .game-panel .fleetHolder .fleetStatus .img-placeholder {
         background-color: #fff; }
-  section .inputContainer {
+  .game-panel .inputContainer {
     position: relative;
     background-color: rgba(65, 65, 65, 0.55);
     text-align: center; }
-    section .inputContainer input {
+    .game-panel .inputContainer input {
       margin: 15px auto;
       height: 100px;
       width: 50%;
@@ -170,7 +171,7 @@ section {
       color: #1eff00;
       border: 1px solid #1eff00;
       background-color: rgba(0, 0, 0, 0.5); }
-    section .inputContainer .buoy-message {
+    .game-panel .inputContainer .buoy-message {
       position: absolute;
       display: none;
       top: 0px;
@@ -181,11 +182,11 @@ section {
       background-color: rgba(234, 19, 20, 0.5);
       transition: all 0.5s;
       -webkit-transition: all 0.5s; }
-      section .inputContainer .buoy-message h2 {
+      .game-panel .inputContainer .buoy-message h2 {
         position: relative;
         display: block;
         margin-top: 50px; }
-    section .inputContainer .buoys-used {
+    .game-panel .inputContainer .buoys-used {
       position: relative;
       display: block;
       margin: 5px auto;
@@ -193,34 +194,34 @@ section {
       border: 1px solid #1eff00;
       background-color: rgba(0, 0, 0, 0.5);
       overflow-y: scroll; }
-      section .inputContainer .buoys-used p .guess {
+      .game-panel .inputContainer .buoys-used p .guess {
         position: relative;
         margin: 0px;
         padding: 5px;
         font-size: 1.2em; }
-  section .controls .game-button-main {
+  .game-panel .controls .game-button-main {
     height: 80px;
     width: 80px;
     border-radius: 100%;
     border: 1px solid black;
     transition: all 0.1s;
     -webkit-transition: all 0.1s; }
-  section .controls .game-button-main:focus {
+  .game-panel .controls .game-button-main:focus {
     outline: none; }
-  section .controls .game-button-main:active {
+  .game-panel .controls .game-button-main:active {
     box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5) inset; }
-  section .controls .hint {
+  .game-panel .controls .hint {
     background-color: #ffc600; }
-  section .controls .ping {
+  .game-panel .controls .ping {
     background-color: green; }
-  section .controls .reset {
+  .game-panel .controls .reset {
     background-color: orangered; }
-  section .controls .ping:active {
+  .game-panel .controls .ping:active {
     background-color: lightgreen; }
-  section .controls .torpedo {
+  .game-panel .controls .torpedo {
     background-color: rgba(255, 0, 0, 0.5);
     color: rgba(0, 0, 0, 0.5); }
-  section .controls .torpedo-enabled {
+  .game-panel .controls .torpedo-enabled {
     background-color: red; }
 
 /*# sourceMappingURL=fsgg.css.map */
