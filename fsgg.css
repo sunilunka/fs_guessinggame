@@ -1,0 +1,55 @@
+body {
+  background-color: black; }
+  body section {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center; }
+    body section .main {
+      position: relative;
+      display: block;
+      margin: 5px auto;
+      width: 400px;
+      height: 100%;
+      background-color: rgba(56, 75, 234, 0.75); }
+      body section .main h3 {
+        color: white; }
+      body section .main .fleetStatus {
+        position: relative;
+        display: block;
+        z-index: 400;
+        margin: 0px auto;
+        height: 80px;
+        background-color: red; }
+        body section .main .fleetStatus p {
+          position: relative;
+          display: block;
+          margin: 0px;
+          padding: 20px; }
+      body section .main .inputContainer {
+        position: relative;
+        display: block;
+        height: 200px;
+        background-color: green;
+        text-align: center; }
+        body section .main .inputContainer input {
+          margin: 30px auto;
+          height: 50%;
+          width: 50%;
+          text-align: center;
+          font-size: 3em; }
+        body section .main .inputContainer .message {
+          position: absolute;
+          display: block;
+          top: 0px;
+          left: 0px;
+          z-index: 500;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(234, 19, 20, 0.5); }
+          body section .main .inputContainer .message h2 {
+            position: relative;
+            display: block;
+            margin-top: 50px; }
+
+/*# sourceMappingURL=fsgg.css.map */
