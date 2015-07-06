@@ -9,24 +9,38 @@
     <link type="text/css" rel="stylesheet" href="fsgg.css">
   </head>
   <body>
+    <section id="intro-panel">
+      <div class="intro-panel-wrapper">
+      <header class="intro-panel-header">
+        <h1>YOUR FLEET IS UNDER ATTACK!<h1>
+      </header>
+    </div>
+      
+    </section>
     <section class="game-panel">
       <header class="titlePanel">
         <h3>Sink the Submarine!</h3>
       </header>
       <div class="fleetHolder">
         <div class="fleetStatus">
-          <div class="img-placeholder"></div>
-          <p>25 / 30</p>
-
+          <div class="img-placeholder">
+            <img src="ship.svg"></img>
+          </div>
+          <div class="fleetRemaining">
+            <h1>25 of 30</h1>
+          </div>
+          <div class="fleetCaption">
+            <h3>ships <br> afloat</h3>
+          </div>
         </div>
       </div>
       <div class="inputContainer">  
         <input type="text" value="" maxlength="3"></input>
         <div class="buoys-used">
-          <p class="guess"><span class="warm"> 12</span><span class="cold"> 14</span><span class="freezing"> 09</span><span class="hot"> 92</span> 34 95 dd dd d dd d dd ddd dd d d dd dd dd dd dd</p>
+          <p class="guess"><span class="warm"> 12</span><span class="cold"> 14</span><span class="freezing"> 09</span><span class="hot"> 92</span></p>
         </div>
         <div class="buoy-message">
-          <h2>That buoy is arctic cold!</h2>
+          <h2>That buoy is cold - no echoes!</h2>
         </div>
       </div>
       <footer class="controls">
