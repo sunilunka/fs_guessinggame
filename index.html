@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sink the sub!</title>
     <link type="text/css" rel="stylesheet" href="normalize.css">
     <link type="text/css" rel="stylesheet" href="fsgg.css">
@@ -13,7 +13,20 @@
       <div class="intro-panel-wrapper">
       <header class="intro-panel-header">
         <h1>YOUR FLEET IS UNDER ATTACK!<h1>
+
       </header>
+      <div class="intro-panel-detail">
+          <p>This is a classic hot and cold game with a maritime feel...</p>
+          <p>A rogue submarine is terrorizing your fleet!</p>
+          <p>You are on an anti-submarine helicopter. You have 100 sonobuoys in the water, but due to a equipment glitch can only ping each one once</p>
+          <p>Each time you ping a sonobuoy it will give you an indicaton of whether you are getting hotter (closer to the sub) or colder (further away).</p>
+          <p>The catch...each time you aren't successful, the submarine could damage another ship...15 ships damaged and the mission is failed.</p>
+          <p>Once you have the 'hottest' sonobuoy in contact: DROP THE TORPEDO TO WIN!</p>
+          <p>Using the hint button calls the alert Anti-submarine aicraft, and gives you the closest sonobuoy to attack, but you get six ships damaged in the process. It takes a while for the aircraft to get to the fleet. Use it wisely.</p>
+      </div>
+      <footer class="controls">
+        <button class="game-button-main"></button>
+      </footer>
     </div>
       
     </section>
@@ -44,7 +57,7 @@
         </div>
       </div>
       <footer class="controls">
-        <button class="game-button-main ping">PING</button>
+        <button class="game-button-main ping" title="Click this once you have entered a buoy number!">PING</button>
         <button class="game-button-main hint">HINT</button>
         <button class="game-button-main reset">RESET</button>        
         <!--<button class="game-button-main torpedo" disabled="true">FIRE</button>-->
