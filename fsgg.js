@@ -29,9 +29,26 @@
     } else if(this.isRepeat(this.playerGuesses, guess)){
       console.error("You have already used that sonobuoy, try again!");
     } else {
+      this.tempOfGuess(guess);
       this.playerGuesses.push(guess);
       console.log(this.playerGuesses);
     }
+  }
+
+  Game.prototype.tempOfGuess = function(guess){
+    if(this.numberToGuess -  guess > 0){ 
+      if((this.numberToGuess - guess <= 2)){
+        console.info("Scorching hot!");
+      }
+    } else if (this.numberToGuess - guess < 0){
+      if(this.numberToGuess - guess >= 2){
+        console.info("Scorching hot!");
+      }
+    }  
+  }
+
+  Game.prototype.compareLastGuess = function(guess, arr){
+
   }
 
 
