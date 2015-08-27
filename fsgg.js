@@ -13,15 +13,26 @@
     return Math.round(Math.random() * 100);
   };
 
+  Game.prototype.isRepeat = function(arr, guess){
+    if(arr.indexOf(guess) === -1){
+      return false;
+    } else {
+      return true;
+    }
+
+  }
+
   Game.prototype.checkGuess = function(entry){
     var guess = parseInt(entry);
-    if(isNaN(guess)){
-      console.warn("That is not a number! Try again");
+    if(isNaN(guess) || (/\D/g.test(entry))){
+      console.warn("That is not a valid number! Try again");
+    } else if(this.isRepeat(this.playerGuesses, guess)){
+      console.error("You have already used that sonobuoy, try again!");
     } else {
       this.playerGuesses.push(guess);
-      return guess === this.numberToGuess;
+      console.log(this.playerGuesses);
     }
-  };
+  }
 
 
   var game = new Game();
