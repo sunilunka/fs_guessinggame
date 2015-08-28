@@ -28,15 +28,17 @@
       console.warn("That is not a valid number! Try again");
     } else if(this.isRepeat(this.playerGuesses, guess)){
       console.error("You have already used that sonobuoy, try again!");
+    } else if ( (guess < 0 ) || (guess > 100) ){
+      console.error("Our sonobuoys channels only go from 1 - 100!");
     } else {
-      this.guessTemp(guess);
+      this.guessCheck(guess);
       this.playerGuesses.push(guess);
       console.log(this.playerGuesses);
     }
   }
 
 
-  Game.prototype.guessTemp = function(guess){
+  Game.prototype.guessCheck = function(guess){
     var guessDifference = this.numberToGuess - guess;
     var getPositiveDiff = function(gd) {
       return gd > 0 ? gd : (gd * -1);
@@ -59,7 +61,7 @@
       } else {
         console.info("Freezing cold!");
       }
-    }
+    };
 
     var compareLastGuess = function(arr, currentGuess, objectiveNum){
       if(arr.length > 0){  
@@ -84,7 +86,7 @@
     console.log(higherOrLower(guessDifference));
     return guessTemp(difference);
 
-  }
+  };
 
 
 
