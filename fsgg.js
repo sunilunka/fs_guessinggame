@@ -35,30 +35,50 @@
     }
   }
 
+
   Game.prototype.guessTemp = function(guess){
     var guessDifference = this.numberToGuess - guess;
-    var diff = guessDifference > 0 ? guessDifference : (guessDifference * -1);
-    if(diff <= 2){
-      console.log("Scorching hot!");
-    } else if ((diff > 2) && (diff <= 5)){
-      console.info("Really hot!");
-    } else if ((diff > 5) && (diff <= 10)) {
-      console.info("Hot!")
-    } else if ((diff > 10) && (diff <= 20)) {
-      console.log("Warm");
-    } else if ((diff > 20) && (diff <= 35)){
-      console.info("Cold");
-    } else if ((diff > 35) && (diff <= 50)){
-      console.info("Really cold");
-    } else {
-      console.info("Freezing cold!");
+    var getPositiveDiff = function(gd) {
+      return gd > 0 ? gd : (gd * -1);
+    };
+    var difference = getPositiveDiff(guessDifference);
+
+    var guessTemp = function(diff){  
+      if(diff <= 2){
+        console.log("Scorching hot!");
+      } else if ((diff > 2) && (diff <= 5)){
+        console.info("Really hot!");
+      } else if ((diff > 5) && (diff <= 10)) {
+        console.info("Hot!")
+      } else if ((diff > 10) && (diff <= 20)) {
+        console.log("Warm");
+      } else if ((diff > 20) && (diff <= 35)){
+        console.info("Cold");
+      } else if ((diff > 35) && (diff <= 50)){
+        console.info("Really cold");
+      } else {
+        console.info("Freezing cold!");
+      }
     }
 
+    var compareLastGuess = function(arr, currentGuess, objectiveNum){
+      if(arr.length > 0){  
+        var prevGuessDiff = getPositiveDiff(objectiveNum - arr[arr.length -1]);
+        if(prevGuessDiff > difference){
+          return "Getting hotter";
+        } else {
+          return "Getting colder";
+        }
+      };
+
+
+    }
+    console.log(compareLastGuess(this.playerGuesses, guess, this.numberToGuess));
+    // console.log(compareLastGuess(this.playerGuesses, guess, this.numberToGuess))
+    return guessTemp(difference);
+
   }
 
-  Game.prototype.compareLastGuess = function(guess, arr){
-
-  }
 
 
   var game = new Game();
