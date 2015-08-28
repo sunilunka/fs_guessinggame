@@ -70,11 +70,18 @@
           return "Getting colder";
         }
       };
+    };
 
-
+    var higherOrLower = function(rawDiff){
+      if(rawDiff > 0){
+        return "Try a higher number";
+      } else {
+        return "Try a lower number";
+      }
     }
+
     console.log(compareLastGuess(this.playerGuesses, guess, this.numberToGuess));
-    // console.log(compareLastGuess(this.playerGuesses, guess, this.numberToGuess))
+    console.log(higherOrLower(guessDifference));
     return guessTemp(difference);
 
   }
