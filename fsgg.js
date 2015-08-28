@@ -45,10 +45,16 @@
     };
     var difference = getPositiveDiff(guessDifference);
 
+    var tempOutput = function(cls, msg){
+      $("#userMessage").addClass(cls);
+      $("#userMessage h2").html(msg);
+    }
+
     var guessTemp = function(diff){  
       if(diff <= 2){
         console.log("Scorching hot!");
       } else if ((diff > 2) && (diff <= 5)){
+
         console.info("Really hot!");
       } else if ((diff > 5) && (diff <= 10)) {
         console.info("Hot!")
@@ -57,8 +63,10 @@
       } else if ((diff > 20) && (diff <= 35)){
         console.info("Cold");
       } else if ((diff > 35) && (diff <= 50)){
-        console.info("Really cold");
+        $("#userMessage").addClass("reallyCold");
+        $("#userMessage h2").html("Damn, still real cold, but maybe something there...")
       } else {
+        $("#userMessage").addClass("freezing");
         console.info("Freezing cold!");
       }
     };
@@ -84,7 +92,8 @@
 
     console.log(compareLastGuess(this.playerGuesses, guess, this.numberToGuess));
     console.log(higherOrLower(guessDifference));
-    return guessTemp(difference);
+    guessTemp(difference);
+    $("#userMessage").fadeIn("slow").delay(1000).fadeOut("slow");
 
   };
 
