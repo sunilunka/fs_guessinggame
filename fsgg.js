@@ -25,36 +25,54 @@
   Game.prototype.checkGuess = function(entry){
     var guess = parseInt(entry);
     if(isNaN(guess) || (/\D/g.test(entry))){
-      console.warn("That is not a valid number! Try again");
+      Game.prototype.displayFeedback("inputError", "That is not a valid number! Try again");
     } else if(this.isRepeat(this.playerGuesses, guess)){
-      console.error("You have already used that sonobuoy, try again!");
+      Game.prototype.displayFeedback("inputError", "You have already used that sonobuoy, try again!");
     } else if ( (guess < 0 ) || (guess > 100) ){
-      console.error("Our sonobuoys channels only go from 1 - 100!");
+      Game.prototype.displayFeedback("inputError", "Our sonobuoys channels only go from 1 - 100! Try again!");
     } else {
-      this.guessCheck(guess);
+      this.guessOutput(guess);
       this.playerGuesses.push(guess);
       console.log(this.playerGuesses);
     }
   }
 
+  Game.prototype.displayFeedback = function(cls, msgOne, msgTwo){
+    $("#userMessage").addClass(cls);
+    $("#userMessage h2").html(msgOne);
+    $("#userMessage h4").html(msgTwo);
+    $("#userMessage").fadeIn("slow").delay(1500).fadeOut("slow", function(){
+      $(this).removeClass();
+      console.log(this, $(this));
+    });
 
-  Game.prototype.guessCheck = function(guess){
+    return;
+  }
+
+  Game.prototype.torpedoLaunch = function(){
+    $("#torpedo").prop("disabled", false)
+      .addClass("torpedo-enabled")
+      .fadeIn("fast");
+  }
+
+
+  Game.prototype.guessOutput = function(guess){
     var guessDifference = this.numberToGuess - guess;
     var getPositiveDiff = function(gd) {
       return gd > 0 ? gd : (gd * -1);
     };
     var difference = getPositiveDiff(guessDifference);
 
-    var tempOutput = function(cls, msg){
-      $("#userMessage").addClass(cls);
-      $("#userMessage h2").html(msg);
-    }
+
 
     var guessTemp = function(diff){  
-      if(diff <= 2){
-        console.log("Scorching hot!");
+      if(diff === 0){
+        Game.prototype.displayFeedback("hot", "HOT CONTACT, launch the torpedo!");
+        Game.prototype.torpedoLaunch();
+      } else if(diff <= 2){
+        Game.prototype.displayFeedback("hot", "So close, almost have hot contact!");
       } else if ((diff > 2) && (diff <= 5)){
-
+        Game.prototype.displayFeedback("gettingHotter", "Getting hotter now!");
         console.info("Really hot!");
       } else if ((diff > 5) && (diff <= 10)) {
         console.info("Hot!")
@@ -63,10 +81,9 @@
       } else if ((diff > 20) && (diff <= 35)){
         console.info("Cold");
       } else if ((diff > 35) && (diff <= 50)){
-        $("#userMessage").addClass("reallyCold");
-        $("#userMessage h2").html("Damn, still real cold, but maybe something there...")
+        Game.prototype.displayFeedback("reallyCold", "Still cold...but maybe a faint echo...");
       } else {
-        $("#userMessage").addClass("freezing");
+        Game.prototype.displayFeedback("freezing", "No echoes at all, freezing cold!", higherOrLower(guessDifference));
         console.info("Freezing cold!");
       }
     };
@@ -93,7 +110,7 @@
     console.log(compareLastGuess(this.playerGuesses, guess, this.numberToGuess));
     console.log(higherOrLower(guessDifference));
     guessTemp(difference);
-    $("#userMessage").fadeIn("slow").delay(1000).fadeOut("slow");
+
 
   };
 
@@ -109,6 +126,7 @@
 
   $("#reset").click(function(e){
     e.preventDefault();
+    console.log($(".guess").empty())
     game = new Game();
 
   })

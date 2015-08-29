@@ -41,8 +41,13 @@
     .controls .game-button-main {
       position: relative;
       display: inline-block; }
-    .controls .torpedo {
-      display: none; } }
+    .controls #torpedo {
+      position: absolute;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px; } }
 @media (min-width: 481px) and (max-width: 767px) {
   .game-panel {
     width: 480px;
@@ -89,6 +94,13 @@
     position: relative;
     display: block;
     margin: 5px; }
+    .controls #torpedo {
+      position: absolute;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px; }
     .controls .torpedo {
       display: inline-block; } }
 @media (min-width: 768px) {
@@ -137,7 +149,14 @@
       height: auto;
       text-align: center; }
       .game-panel .controls .game-button-main {
-        margin: 5px; } }
+        margin: 5px; }
+    .game-panel #torpedo {
+      position: relative;
+      left: -404px;
+      width: 400px;
+      display: none;
+      height: 50px;
+      margin: 5px auto; } }
 body {
   background-image: url("bg_landscape.jpg");
   background-size: cover;
@@ -245,21 +264,30 @@ body {
     .game-panel .inputContainer #userMessage {
       position: absolute;
       display: none;
-      top: 0px;
+      bottom: 0px;
       left: 0px;
       z-index: 500;
       width: 100%;
-      height: 100%; }
+      height: 50%; }
       .game-panel .inputContainer #userMessage h2 {
         position: relative;
         display: block;
         margin-top: 50px; }
     .game-panel .inputContainer .freezing {
-      background-color: rgba(255, 255, 255, 0.75); }
+      background-color: rgba(0, 0, 255, 0.75);
+      color: rgba(255, 255, 255, 0.9); }
     .game-panel .inputContainer .reallyCold {
-      background-color: rgba(255, 212, 212, 0.75); }
+      background-color: rgba(255, 212, 212, 0.75);
+      color: rgba(255, 255, 255, 0.9); }
     .game-panel .inputContainer .cold {
       background-color: rgba(0, 0, 255, 0.75); }
+    .game-panel .inputContainer .gettingHotter {
+      background-color: rgba(255, 169, 169, 0.75); }
+    .game-panel .inputContainer .hot {
+      background-color: red; }
+    .game-panel .inputContainer .inputError {
+      background-color: red;
+      color: white; }
     .game-panel .inputContainer .buoys-used {
       position: relative;
       display: block;
@@ -273,6 +301,16 @@ body {
         margin: 0px;
         padding: 5px;
         font-size: 1.2em; }
+  .game-panel #torpedo {
+    outline: none;
+    border: 1px solid black;
+    background-color: rgba(255, 0, 0, 0.9);
+    transition: box-shadow 0.1s;
+    -webkit-transition: box-shadow 0.1s; }
+  .game-panel #torpedo:active {
+    background-color: red;
+    color: white;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5) inset; }
   .game-panel .controls .game-button-main {
     height: 80px;
     width: 80px;
@@ -296,10 +334,5 @@ body {
     background-color: khaki; }
   .game-panel .controls .reset:active {
     background-color: darkorange; }
-  .game-panel .controls .torpedo {
-    background-color: rgba(255, 0, 0, 0.5);
-    color: rgba(0, 0, 0, 0.5); }
-  .game-panel .controls .torpedo-enabled {
-    background-color: red; }
 
 /*# sourceMappingURL=fsgg.css.map */

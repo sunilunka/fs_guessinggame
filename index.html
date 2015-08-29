@@ -25,7 +25,7 @@
           <p>Using the hint button calls the alert Anti-submarine aicraft, and gives you the closest sonobuoy to attack, but you get six ships damaged in the process. It takes a while for the aircraft to get to the fleet. Use it wisely.</p>
       </div>
       <footer class="controls">
-        <button class="game-button-main"></button>
+        <button class="game-button-main">START</button>
       </footer>
     </div>
       
@@ -53,14 +53,15 @@
           <p class="guess"><span class="warm"> 12</span><span class="cold"> 14</span><span class="freezing"> 09</span><span class="hot"> 92</span></p>
         </div>
         <div id="userMessage" class="">
-          <h2>That buoy is cold - no echoes!</h2>
+          <h2></h2>
+          <h4></h4>
         </div>
       </div>
       <footer class="controls">
         <button id="ping" class="game-button-main ping" title="Click this once you have entered a buoy number!">PING</button>
         <button id="hint" class="game-button-main hint">HINT</button>
         <button id="reset" class="game-button-main reset">RESET</button>        
-        <!--<button class="game-button-main torpedo" disabled="true">FIRE</button>-->
+        <button id="torpedo" disabled="true">DROP WEAPON</button>
       </footer>
     </section>
     <script type="text/javascript" src="jquery.js"></script>
