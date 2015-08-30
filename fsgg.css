@@ -269,10 +269,10 @@ body {
       z-index: 500;
       width: 100%;
       height: 50%; }
-      .game-panel .inputContainer #userMessage h2 {
+      .game-panel .inputContainer #userMessage h3 {
         position: relative;
         display: block;
-        margin-top: 50px; }
+        margin: 10px; }
     .game-panel .inputContainer .freezing {
       background-color: rgba(0, 0, 255, 0.75);
       color: rgba(255, 255, 255, 0.9); }
@@ -288,6 +288,9 @@ body {
     .game-panel .inputContainer .inputError {
       background-color: red;
       color: white; }
+    .game-panel .inputContainer .hint {
+      background-color: yellow;
+      color: black; }
     .game-panel .inputContainer .buoys-used {
       position: relative;
       display: block;
@@ -304,11 +307,11 @@ body {
   .game-panel #torpedo {
     outline: none;
     border: 1px solid black;
-    background-color: rgba(255, 0, 0, 0.9);
-    transition: box-shadow 0.1s;
-    -webkit-transition: box-shadow 0.1s; }
-  .game-panel #torpedo:active {
     background-color: red;
+    transition: background-color 0.1s color 0.1s box-shadow 0.1s;
+    -webkit-transition: background-color 0.1s color 0.1s box-shadow 0.1s; }
+  .game-panel #torpedo:active {
+    background-color: #FF2F00;
     color: white;
     box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5) inset; }
   .game-panel .controls .game-button-main {
