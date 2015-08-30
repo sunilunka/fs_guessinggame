@@ -49,7 +49,7 @@
     return;
   }
 
-  Game.prototype.torpedoLaunch = function(){
+  Game.prototype.torpedoEnabled = function(){
     $("#torpedo").prop("disabled", false)
       .addClass("torpedo-enabled")
       .fadeIn("fast");
@@ -68,7 +68,7 @@
     var guessTemp = function(diff){  
       if(diff === 0){
         Game.prototype.displayFeedback("hot", "HOT CONTACT, launch the torpedo!");
-        Game.prototype.torpedoLaunch();
+        Game.prototype.torpedoEnabled();
       } else if(diff <= 2){
         Game.prototype.displayFeedback("hot", "So close, almost have hot contact!");
       } else if ((diff > 2) && (diff <= 5)){
