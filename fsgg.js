@@ -59,11 +59,15 @@
   // }
 
   Game.prototype.displayFeedback = function(cls, msgOne, msgTwo){
+    $("#ping, #hint").prop("disabled", true);
     $("#userMessage").addClass(cls);
     $("#userMessage h3").html(msgOne);
     $("#userMessage h4").html(msgTwo);
     $("#userMessage").fadeIn("slow").delay(1500).fadeOut("slow", function(){
       $(this).removeClass();
+      $("#ping, #hint").prop("disabled", false);
+      $("input").val("")
+        .focus();
       ;
       console.log(this, $(this));
     });
