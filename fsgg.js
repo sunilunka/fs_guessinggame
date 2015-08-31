@@ -191,7 +191,7 @@
 
     $("#hint").click(function(e){
       e.preventDefault();
-      game.displayFeedback("hint", "Special intelligence suggests" + "<br>" + " the closest buoy is: <br>" + game.numberToGuess + "<br>");
+      game.displayFeedback("hint", "Special intelligence suggests" + "<br>" + " the closest buoy is: <br>" + game.numberToGuess + "<br>", " ");
     })
 
     $("#reset").click(function(e){
