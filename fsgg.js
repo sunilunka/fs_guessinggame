@@ -40,11 +40,11 @@
   Game.prototype.checkGuess = function(entry){
     var guess = parseInt(entry);
     if(isNaN(guess) || (/\D/g.test(entry))){
-      Game.prototype.displayFeedback("inputError", "That is not a valid number! Try again");
+      Game.prototype.displayFeedback("inputError", "That is not a valid number! <br> Try again");
     } else if(this.isRepeat(this.playerGuesses, guess)){
-      Game.prototype.displayFeedback("inputError", "You have already used that sonobuoy, try again!");
+      Game.prototype.displayFeedback("inputError", "You have already used that sonobuoy! <br> Try again!");
     } else if ( (guess < 1 ) || (guess > 100) ){
-      Game.prototype.displayFeedback("inputError", "Our sonobuoys channels only go from 1 - 100! Try again!");
+      Game.prototype.displayFeedback("inputError", "Our sonobuoys channels only go from <br> 1 - 100 <br> Try again!");
 
     } else {
       if(this.attemptsRemaining > 1){
@@ -111,26 +111,25 @@
 
 
     var guessTemp = function(diff){  
-      // debugger;
       if(diff === 0){
         Game.prototype.displayFeedback("hot", "HOT CONTACT, launch the torpedo!" );
         Game.prototype.torpedoEnabled();
       } else if(diff <= 2){
-        Game.prototype.displayFeedback("hot", "So close, almost have hot contact!", compareLastGuess(pgs, guess, ntg) + " " + higherOrLower(guessDifference));
+        Game.prototype.displayFeedback("hot", "Really hot, strong echoes!", compareLastGuess(pgs, guess, ntg) + " " + higherOrLower(guessDifference));
         Game.prototype.userGuessLogger(guess, "hot");
       } else if ((diff > 2) && (diff <= 5)){
-        Game.prototype.displayFeedback("gettingHotter", "Getting hotter now, good echoes!", compareLastGuess(pgs, guess, ntg) + " " + higherOrLower(guessDifference));
+        Game.prototype.displayFeedback("gettingHotter", "Hot, good echoes!", compareLastGuess(pgs, guess, ntg) + " " + higherOrLower(guessDifference));
         Game.prototype.userGuessLogger(guess, "gettingHotter"); 
         console.info("Really hot!");
       } else if ((diff > 5) && (diff <= 10)) {
-        Game.prototype.displayFeedback("warm", "Starting to get some good echoes...", compareLastGuess(pgs, guess, ntg) + " " + higherOrLower(guessDifference));
+        Game.prototype.displayFeedback("warm", "Warm, getting some good echoes...", compareLastGuess(pgs, guess, ntg) + " " + higherOrLower(guessDifference));
         Game.prototype.userGuessLogger(guess, "warm");
         console.info("Hot!")
       } else if ((diff > 10) && (diff <= 20)) {
-        Game.prototype.displayFeedback("cold", "Getting cold...", compareLastGuess(pgs, guess, ntg) + " " + higherOrLower(guessDifference));
+        Game.prototype.displayFeedback("cold", "...getting some weak echoes...warming up...", compareLastGuess(pgs, guess, ntg) + " " + higherOrLower(guessDifference));
         Game.prototype.userGuessLogger(guess, "cold");
       } else if ((diff > 20) && (diff <= 35)){
-        Game.prototype.displayFeedback("reallyCold", "Still cold...but maybe a faint echo...", compareLastGuess(pgs, guess, ntg) + " " + higherOrLower(guessDifference));
+        Game.prototype.displayFeedback("reallyCold", "Cold...but maybe a faint echo...", compareLastGuess(pgs, guess, ntg) + " " + higherOrLower(guessDifference));
         Game.prototype.userGuessLogger(guess, "reallyCold");
       } else {
         Game.prototype.displayFeedback("freezing", "No echoes at all, freezing cold!", compareLastGuess(pgs, guess, ntg) + " " + higherOrLower(guessDifference));
@@ -156,11 +155,12 @@
 
     var higherOrLower = function(rawDiff){
       if(rawDiff > 0){
-        return "Try a higher number";
+        return "try a higher number";
       } else {
-        return "Try a lower number";
+        return "try a lower number";
       }
     }
+
 
     console.log(this.attemptsRemaining);
     console.log(compareLastGuess(this.playerGuesses, guess, this.numberToGuess));
@@ -172,6 +172,16 @@
 
   function initGame(){
     var game = new Game();
+
+    var reset = function(){
+      $("#guessLog").empty();
+      $("#hint, #ping").prop("disabled", false); 
+      game = new Game();
+      $("#guessesLeft").html(game.attemptsRemaining); 
+      $("input").prop("disabled", false).focus();
+      $("#torpedo").fadeOut("slow");
+
+    }
     console.log(game.numberToGuess);
     $("#ping").click(function(e) { 
       e.preventDefault();
@@ -190,18 +200,12 @@
 
     $("#hint").click(function(e){
       e.preventDefault();
-      game.displayFeedback("hint", "You ask for more air support...and find out the closest buoy is " + game.numberToGuess + ".\n", "...but six ships are damaged in the process.");
+      game.displayFeedback("hint", "You ask for more air support..." + "<br>" + "and find out the closest buoy is: <br>" + game.numberToGuess + "<br>", "...but six ships are damaged in the process.");
     })
 
     $("#reset").click(function(e){
       e.preventDefault();
-      $("#guessLog").empty();
-      $("#hint, #ping").prop("disabled", false);
-      $("#guessesLeft").html(game.attemptsRemaining);  
-      game = new Game();
-      $("input").prop("disabled", false).focus();
-      
-
+      reset();
     });
   };
 
