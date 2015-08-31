@@ -4,7 +4,7 @@
     this.numberToGuess = this.generateNumber();
     this.attemptsRemaining = 20;
     this.playerGuesses = [];
-    console.log(this.numberToGuess);
+
   }
 
   Game.prototype.generateNumber = function(){
