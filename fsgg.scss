@@ -1,4 +1,26 @@
 @media (min-width: 320px) and (max-width: 480px){
+   
+  #success-panel {
+    video {
+      margin: 100px auto;
+      width: 90%;
+    }
+  }
+
+  #intro-panel {
+
+  .intro-panel-wrapper {
+
+    .intro-panel-detail {
+        margin: 10px auto;
+        width: 90%; 
+      }
+
+    }
+  } 
+
+
+
   .game-panel {
     width: 320px;
     margin: 10px auto;
@@ -54,14 +76,41 @@
       display: inline-block;
     }
 
-    .torpedo {
+    #torpedo {
+      position: absolute;
       display: none;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px;
     }
+
   } 
 }
 
 
 @media (min-width: 481px) and (max-width: 767px){
+
+  #success-panel {
+    video {
+      margin: 50px auto;
+      width: 90%;
+    }
+  }
+
+  #intro-panel {
+
+  .intro-panel-wrapper {
+
+    .intro-panel-detail {
+        margin: 10px auto;
+        width: 90%; 
+      }
+
+    }
+  }  
+
+
 
   .game-panel {
     width: 480px;
@@ -119,6 +168,17 @@
     position: relative;
     display: block;
     margin: 5px;
+
+    #torpedo {
+      position: absolute;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px;
+    }
+
+
     .game-button-main {
 
     }
@@ -133,6 +193,27 @@
 }
 
 @media (min-width: 768px){
+  
+  #success-panel {
+    video {
+      margin: 10px auto;
+      width: 90%;
+    }
+  }
+
+  #intro-panel {
+
+  .intro-panel-wrapper {
+
+    .intro-panel-detail {
+        margin: 10px auto;
+        width: 50%; 
+      }
+
+    }
+  } 
+
+
   .game-panel {
     width: 80%;
     margin: 20px auto;
@@ -191,6 +272,16 @@
         margin: 5px;
       }
     }
+
+    #torpedo {
+      position: relative;
+      left: -404px;
+      width: 400px;
+      display: none;
+      height: 50px;
+      margin: 5px auto;
+    }
+
   }
 
 
@@ -208,32 +299,88 @@ body {
   font-family: helvetica, arial, courier;
 }
 
-
-.freezing {
-  color: aqua;
+.outcome {
+  position: fixed;
+  display: none;
+  left: 0px;
+  top: 0px;
+  z-index: 2000;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: white;
 }
 
-.cold {
-  color: blue;
+.game-button-option {
+  position: relative;
+  outline: none;
+  margin: 10px auto;
+  background-color: rgba(255, 0, 0, 0.75);
+  color: white;
+  padding: 20px;
+  border-radius: 5%;
+  border: 1px solid black;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
 }
 
-.warm {
-  color: orange;
+.game-button-option:active {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8) inset;
+  color: black;
+  background-color: red;
 }
 
-.hot {
-  color: crimson;
+.game-button-option:hover {
+  background-color: orange;
+}
+
+
+.clearfix {
+  clear: both;
+  width: 100%;
+  height: 1px;
+}
+
+#fail-panel {
+  text-align: center;
+  background-image: url("images/missionFail.gif");
+  background-size: cover;
+  background-position: center; 
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  header {
+    position: relative;
+    margin: 200px auto;
+    width: 50%;
+  }
+}
+
+#success-panel {
+  background-color: black;
+
+  video {
+    position: relative;
+    display: block;
+    height: auto;
+  }
+
+  button {
+    position: relative;
+    display: block;
+    margin: 10px auto;
+  }
 }
 
 #intro-panel {
   position: fixed;
-  display: none;
+  display: block;
   top: 0px;
   left: 0px;
   height: 100%;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.9);
   overflow-y: auto;
   .intro-panel-wrapper {
     position: relative;
@@ -247,23 +394,32 @@ body {
       display: block;
       width: 80%;
       margin: 40px auto;
+      font-family: Helvetica, Courier, Arial;
+      color: white;
     }
 
     .intro-panel-detail {
       position: relative;
       display: block;
-      margin: 20px auto;
-      width: 80%; 
+      margin: 10px auto;
       color: rgba(255,255,255,1);
+      background-color: rgba(12, 54, 100, 0.5);
+      box-shadow: 0px 4px 10px gray;
+      padding: 10px;
 
       p {
         text-align: left;
-        padding: 10px;
-        background-color: rgba(12, 54, 100, 0.5);
-        box-shadow: 0px 4px 10px gray;
-      } 
+        font-family: courier;
+      }
+
     }
   }
+}
+
+.game-panel-start {
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+  opacity: 0.4;
 }
 
 
@@ -276,9 +432,7 @@ body {
   background-color: rgba(0, 0, 0, 0.75);
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
-  // filter: blur(4px);
-  // -webkit-filter: blur(4px);
-  // opacity: 0.4;
+
     
   .titlePanel {
     position: relative;
@@ -341,23 +495,66 @@ body {
       background-color: rgba(64, 64, 64, 0.5);
     }
 
-    .buoy-message { 
+    #userMessage {
       position: absolute;
       display: none;
-      top: 0px;
+      bottom: 0px;
       left: 0px;
       z-index: 500;
       width: 100%;
-      height: 100%;
-      background-color: rgba(234, 19, 20, 0.5);
-      transition: all 0.5s;
-      -webkit-transition: all 0.5s;
-      h2 {
+      height: 50%;
+      // transition: all 0.5s;
+      // -webkit-transition: all 0.5s;
+
+      h3 {
         position: relative;
         display: block;
-        margin-top: 50px;
+        margin: 10px;
       }
+
     }
+
+    .freezing {
+      background-color: rgba(0, 0, 255, 0.75);
+      color: white;
+    }
+
+    .reallyCold {
+      background-color: rgba(0, 129, 212, 1);
+      color: white;
+    }
+
+    .cold {
+      background-color: #A6CDDB;
+      color: white;
+    }
+
+    .warm {
+      background-color: rgba(249, 249, 14, 0.9);
+      color: red;
+    }
+
+    .gettingHotter {
+      background-color: orange;
+      color: white;
+    }
+
+    .hot {
+      background-color: red; //rgba(255, 255-43-43, 255-43-43, 0.75);
+      color: white;
+    }
+
+    .inputError {
+      background-color: red;
+      color: white;
+    }
+
+    .hint {
+      background-color: yellow;
+      color: black;
+
+    }
+
     .buoys-used {
       position: relative;
       display: block;
@@ -367,13 +564,39 @@ body {
       background-color: rgba(0, 0, 0, 0.5);
       overflow-y: scroll;
 
-      p .guess {
+      #guessLog {
         position: relative;
-        margin: 0px;
-        padding: 5px;
-        font-size: 1.2em;  
+        margin: 5px;
+        text-align: center;
+
+        .guessHolder {
+          float: left;
+          height: 16px;
+          width: 16px;
+          text-align: center;
+          vertical-align: bottom;
+          margin: 5px;
+          padding: 5px;
+          border-radius: 100%;
+          color: white;
+        }
+
       }
     }
+  }
+
+  #torpedo {
+    outline: none;
+    border: 1px solid black;
+    background-color: red;
+    transition: background-color 0.1s color 0.1s box-shadow 0.1s;
+    -webkit-transition: background-color 0.1s color 0.1s box-shadow 0.1s;
+  }
+
+  #torpedo:active {
+    background-color: #FF2F00;
+    color: white;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5) inset;
   }
 
   .controls {
@@ -422,13 +645,5 @@ body {
       background-color: darkorange;
     }
 
-    .torpedo {
-      background-color: rgba(255, 0, 0, 0.5);
-      color: rgba(0, 0, 0, 0.5);
-    }
-
-    .torpedo-enabled {
-      background-color: red;
-    }
   }
 }
