@@ -11,22 +11,28 @@
   <body>
     <section id="intro-panel">
       <div class="intro-panel-wrapper">
-      <header class="intro-panel-header">
-        <h1>YOUR FLEET IS UNDER ATTACK!<h1>
+        <header class="intro-panel-header">
+          <h1>YOUR FLEET IS UNDER ATTACK!<h1>
 
-      </header>
-      <div class="intro-panel-detail">
-          <p>A rogue submarine is terrorizing your fleet!</p>
-          <p>As an operator on an antisubmarine helicopter, you need to find the sub...</p>
-          <p>...by 'pinging' each sonobuoy from 1 - 100 and listening for echoes.</p>
-          <p>...each time you aren't successful, the submarine damages another ship.</p>
-          <p>Once you have the 'hottest' sonobuoy in contact: DROP THE TORPEDO TO WIN!</p>
-          <p>Using the hint button calls more air support, and gives you the closest sonobuoy to attack. It takes time...and the sub could damage more ships. Use it wisely.</p>
+        </header>
+        <div class="intro-panel-detail">
+          <p>
+            A rogue submarine is terrorizing your fleet!
+          </p>
+          <p>As an operator on an antisubmarine helicopter, you need to find the sub...
+          </p>
+          <p>
+            You have 100 sonobuoys to ping...find the one with the strongest echoes and drop the torpedo to win.
+          </p>
+          <p>Don't muck around, each wrong guess is another ship damaged!</p>
+          <p>Good luck!</p>
+        </div>
+        <footer class="controls">
+          <button id="start-game" class="game-button-option">START</button>
+        </footer>
       </div>
-      <footer class="controls">
-        <button class="game-button-main">START</button>
-      </footer>
-    </div>
+    </section>
+
     <section id="success-panel" class="outcome">
       <header>  
       </header>
@@ -36,15 +42,14 @@
     </section>
     <section id="fail-panel" class="outcome">
       <header>
-        MISSION FAILED...ALL THE SHIPS HAVE BEEN DISABLED OR SUNK.
+        <h1>MISSION FAILED...</h1>
+        <h2>ALL THE SHIPS HAVE BEEN DISABLED OR SUNK.</h2>
       </header>
       <footer>
-        <button>Play Again...</button>
+        <button class="play-again game-button-option">Play Again...</button>
       </footer>
     </section>
-      
-    </section>
-    <section class="game-panel">
+    <section id="main-game" class="game-panel game-panel-start">
       <header class="titlePanel">
         <h3>Sink the Submarine!</h3>
       </header>
@@ -65,7 +70,6 @@
         <input type="text" value="" maxlength="3"></input>
         <div class="buoys-used">
           <div id="guessLog">
-            <!-- <span class="logNumber hot">20</span> -->
             <div class="clearfix"></div>
           </div>
         </div>

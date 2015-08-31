@@ -4,12 +4,12 @@
 
   var Game = function(){
     this.numberToGuess = this.generateNumber();
-    this.attemptsRemaining = 20;
+    this.attemptsRemaining = 2;
     this.playerGuesses = [];
   }
 
   Game.prototype.generateNumber = function(){
-    return Math.round(Math.random() * 100);
+    return Math.ceil(Math.random() * 100);
   };
 
   Game.prototype.isRepeat = function(arr, guess){
@@ -33,8 +33,6 @@
     .addClass(cls)
     .html(number)
     .prependTo("#guessLog");
-    console.log($numParent, number);
-    // $("#guessLog");
   }
 
   Game.prototype.checkGuess = function(entry){
@@ -51,22 +49,16 @@
         this.attemptsRemaining -= 1;
         this.guessOutput(guess);
         this.playerGuesses.push(guess);
-      } else {
+      } else if((this.attemptsRemaining === 1) && (guess !== this.numberToGuess)){
         this.attemptsRemaining = 0;
         $("#ping, #hint").prop("disabled", true);
+        $("#fail-panel").fadeIn("slow");
+      } else if((this.attemptsRemaining === 1) && (guess === this.numberToGuess)){
+        this.guessOutput(guess);
       };
       this.subtractGuess(this.attemptsRemaining);
-      console.log(this.playerGuesses);
     }
   }
-
-  // Game.prototype.trackGuesses = function(button){
-  //   if(button.id === "hint"){
-  //     this.attemptsRemaining -= 3;
-  //   } else if(button.id === "ping"){
-  //     this.attemptsRemaining -= 1;
-  //   }
-  // }
 
   Game.prototype.displayFeedback = function(cls, msgOne, msgTwo){
     $("#ping, #hint").prop("disabled", true);
@@ -82,7 +74,6 @@
       $("#ping, #hint").prop("disabled", false);
       $("input")
       .focus();
-      console.log(this, $(this));
     });
 
     return;
@@ -161,10 +152,6 @@
       }
     }
 
-
-    console.log(this.attemptsRemaining);
-    console.log(compareLastGuess(this.playerGuesses, guess, this.numberToGuess));
-    console.log(higherOrLower(guessDifference));
     guessTemp(difference);
 
   };
@@ -178,21 +165,23 @@
       $("#hint, #ping").prop("disabled", false); 
       game = new Game();
       $("#guessesLeft").html(game.attemptsRemaining); 
-      $("input").prop("disabled", false).focus();
+      $("input").prop("disabled", false)
+        .val("")
+        .focus();
       $("#torpedo").fadeOut("slow");
+      if($(".outcome:visible")){
+        $(".outcome").fadeOut("fast");
+      };
 
     }
     console.log(game.numberToGuess);
     $("#ping").click(function(e) { 
       e.preventDefault();
-      console.log(e);
       game.checkGuess($("input").val());
     });
 
     $("input").on("keydown", function(event){  
       if(event.keyCode === 13){
-        console.log(this);
-        console.log($(this).val());
         game.checkGuess($(this).val());
 
       };
@@ -200,13 +189,25 @@
 
     $("#hint").click(function(e){
       e.preventDefault();
-      game.displayFeedback("hint", "You ask for more air support..." + "<br>" + "and find out the closest buoy is: <br>" + game.numberToGuess + "<br>", "...but six ships are damaged in the process.");
+      game.displayFeedback("hint", "Special intelligence suggests" + "<br>" + " the closest buoy is: <br>" + game.numberToGuess + "<br>");
     })
 
     $("#reset").click(function(e){
       e.preventDefault();
       reset();
     });
+
+    $(".play-again").click(function(e){
+      e.preventDefault();
+      reset();
+    })
+
+    $("#start-game").click(function(e){
+      e.preventDefault();
+      $("#intro-panel").fadeOut("slow", function(){
+        $("#main-game").removeClass("game-panel-start");
+      });
+    })
   };
 
   initGame();
