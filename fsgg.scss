@@ -1,0 +1,649 @@
+@media (min-width: 320px) and (max-width: 480px){
+   
+  #success-panel {
+    video {
+      margin: 100px auto;
+      width: 90%;
+    }
+  }
+
+  #intro-panel {
+
+  .intro-panel-wrapper {
+
+    .intro-panel-detail {
+        margin: 10px auto;
+        width: 90%; 
+      }
+
+    }
+  } 
+
+
+
+  .game-panel {
+    width: 320px;
+    margin: 10px auto;
+    .titlePanel {
+      display: none;
+    }
+    .fleetHolder {
+      position: relative;
+      display: block;
+      height: 80px;
+      .fleetStatus {
+        .fleetRemaining {
+          position: absolute;
+          display: block;
+          left: 90px;
+          margin: 0px;
+          padding: 20px;
+        }
+        .fleetCaption {
+          position: absolute;
+          display: block;
+          left: 260px;
+          top: 3px;
+          width: 10px;
+        }
+        .img-placeholder {
+          position: absolute;
+          top: 3px;
+          left: 3px;
+          vertical-align: middle;
+          height: 74px;
+          width: 90px;
+        }
+      }
+    }
+    .inputContainer {
+      display: block;
+      height: 230px;
+      width: 320px;
+      .buoys-used {
+        height: 75px;
+      }
+    }
+  }
+
+  .controls {
+    position: relative;
+    display: block;
+    margin: 5px;
+
+    .game-button-main {
+      position: relative;
+      display: inline-block;
+    }
+
+    #torpedo {
+      position: absolute;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px;
+    }
+
+  } 
+}
+
+
+@media (min-width: 481px) and (max-width: 767px){
+
+  #success-panel {
+    video {
+      margin: 50px auto;
+      width: 90%;
+    }
+  }
+
+  #intro-panel {
+
+  .intro-panel-wrapper {
+
+    .intro-panel-detail {
+        margin: 10px auto;
+        width: 90%; 
+      }
+
+    }
+  }  
+
+
+
+  .game-panel {
+    width: 480px;
+    height: 400px;
+    margin: 20px auto;
+    .titlePanel {
+      display: block;
+    }
+    .fleetHolder {
+      position: relative;
+      display: inline-block;
+      width: 100px;
+      height: 240px;
+      margin: 0px 5px;
+      vertical-align: top;
+      .fleetStatus {
+        position: relative;
+        display: inline-block;
+        .fleetRemaining {
+          position: relative;
+          display: block;
+          margin: 5px auto;
+          width: 50px;
+          font-size: 0.75em;
+        }
+
+        .fleetCaption {
+          position: relative;
+          display: block;
+          margin: 5px auto;
+          width: 50px;
+
+        }
+        .img-placeholder {
+          position: relative;
+          display: block;
+          margin: 5px auto;
+          height: 80px;
+          width: 90px;
+        }
+      }
+    }
+    .inputContainer { 
+      display: inline-block;
+      height: 240px;
+      width: 320px;
+      vertical-align: top;
+      .buoys-used {
+        height: 75px;
+      }
+    }
+  }
+
+  .controls {
+    position: relative;
+    display: block;
+    margin: 5px;
+
+    #torpedo {
+      position: absolute;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px;
+    }
+
+
+    .game-button-main {
+
+    }
+
+
+    .torpedo {
+      display: inline-block;
+    }
+  } 
+
+
+}
+
+@media (min-width: 768px){
+  
+  #success-panel {
+    video {
+      margin: 10px auto;
+      width: 90%;
+    }
+  }
+
+  #intro-panel {
+
+  .intro-panel-wrapper {
+
+    .intro-panel-detail {
+        margin: 10px auto;
+        width: 50%; 
+      }
+
+    }
+  } 
+
+
+  .game-panel {
+    width: 80%;
+    margin: 20px auto;
+    .titlePanel {
+      display: block;
+    }
+    .fleetHolder {
+      position: relative;
+      display: inline-block;
+      width: 100px;
+      height: 270px;
+      margin: 0px 5px;
+      vertical-align: top;
+      .fleetStatus {
+        position: relative;
+        display: inline-block;
+        .fleetRemaining {
+          position: relative;
+          display: block;
+          margin: 5px auto;
+          width: 50px;
+          font-size: 0.75em;
+        }
+
+        .fleetCaption {
+          position: relative;
+          display: block;
+          margin: 5px auto;
+          width: 50px;
+
+        }
+        .img-placeholder {
+          position: relative;
+          display: block;
+          margin: 5px auto;
+          height: 80px;
+          width: 90px;
+        }
+      }
+    }
+    .inputContainer {
+      display: inline-block;
+      width: 400px;
+      height: 270px;
+      vertical-align: top;
+      .buoys-used {
+        height: 110px;
+      }
+    }
+    .controls {
+      display: inline-block;
+      width: 90px;
+      height: auto;
+      text-align: center;
+      .game-button-main {
+        margin: 5px;
+      }
+    }
+
+    #torpedo {
+      position: relative;
+      left: -404px;
+      width: 400px;
+      display: none;
+      height: 50px;
+      margin: 5px auto;
+    }
+
+  }
+
+
+}
+
+body {
+  background-image: url('bg_landscape.jpg');
+  background-size: cover;
+  background-position: center; 
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: helvetica, arial, courier;
+}
+
+.outcome {
+  position: fixed;
+  display: none;
+  left: 0px;
+  top: 0px;
+  z-index: 2000;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+.game-button-option {
+  position: relative;
+  outline: none;
+  margin: 10px auto;
+  background-color: rgba(255, 0, 0, 0.75);
+  color: white;
+  padding: 20px;
+  border-radius: 5%;
+  border: 1px solid black;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+}
+
+.game-button-option:active {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8) inset;
+  color: black;
+  background-color: red;
+}
+
+.game-button-option:hover {
+  background-color: orange;
+}
+
+
+.clearfix {
+  clear: both;
+  width: 100%;
+  height: 1px;
+}
+
+#fail-panel {
+  text-align: center;
+  background-image: url("images/missionFail.gif");
+  background-size: cover;
+  background-position: center; 
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  header {
+    position: relative;
+    margin: 200px auto;
+    width: 50%;
+  }
+}
+
+#success-panel {
+  background-color: black;
+
+  video {
+    position: relative;
+    display: block;
+    height: auto;
+  }
+
+  button {
+    position: relative;
+    display: block;
+    margin: 10px auto;
+  }
+}
+
+#intro-panel {
+  position: fixed;
+  display: block;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-y: auto;
+  .intro-panel-wrapper {
+    position: relative;
+    display: block;
+    margin: 0px auto;
+    width: 90%;
+    text-align: center;
+
+    .intro-panel-header {
+      position: relative;
+      display: block;
+      width: 80%;
+      margin: 40px auto;
+      font-family: Helvetica, Courier, Arial;
+      color: white;
+    }
+
+    .intro-panel-detail {
+      position: relative;
+      display: block;
+      margin: 10px auto;
+      color: rgba(255,255,255,1);
+      background-color: rgba(12, 54, 100, 0.5);
+      box-shadow: 0px 4px 10px gray;
+      padding: 10px;
+
+      p {
+        text-align: left;
+        font-family: courier;
+      }
+
+    }
+  }
+}
+
+.game-panel-start {
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+  opacity: 0.4;
+}
+
+
+.game-panel {
+  position: relative;
+  display: block;
+  padding: 10px;
+  height: 450px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+
+    
+  .titlePanel {
+    position: relative;
+
+    h3 {
+      color: white;
+    }
+  }
+
+  .fleetHolder {
+    background-color: rgba(255, 255, 255, 0.5);
+    z-index: 400;
+    .fleetStatus {
+      position: relative;
+      display: block;
+      margin: 0px auto;
+      color: rgba(30, 255, 0, 1);
+      .fleetRemaining {
+        h1 {
+          margin: 0px;
+        }
+      }
+
+      .fleetCaption {
+        h3 {
+          margin-top: 15px;
+        }
+      }
+
+      .img-placeholder {
+        img {
+          position: relative;
+          margin: 25px auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+  .inputContainer {
+    position: relative;
+    // height: auto;
+    background-color: rgba(65, 65, 65, 0.55);
+    text-align: center;
+    input {
+      margin: 15px auto;
+      height: 100px;
+      width: 50%;
+      text-align: center;
+      font-size: 3em;
+      border-radius: 10px;
+      color: rgb(30, 255, 0);
+      border: 1px solid rgb(30, 255, 0);
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: background-color 0.5s;
+      -webkit-transition: background-color 0.5s;
+    }
+
+    input:focus {
+      outline: none;
+      background-color: rgba(64, 64, 64, 0.5);
+    }
+
+    #userMessage {
+      position: absolute;
+      display: none;
+      bottom: 0px;
+      left: 0px;
+      z-index: 500;
+      width: 100%;
+      height: 50%;
+      // transition: all 0.5s;
+      // -webkit-transition: all 0.5s;
+
+      h3 {
+        position: relative;
+        display: block;
+        margin: 10px;
+      }
+
+    }
+
+    .freezing {
+      background-color: rgba(0, 0, 255, 0.75);
+      color: white;
+    }
+
+    .reallyCold {
+      background-color: rgba(0, 129, 212, 1);
+      color: white;
+    }
+
+    .cold {
+      background-color: #A6CDDB;
+      color: white;
+    }
+
+    .warm {
+      background-color: rgba(249, 249, 14, 0.9);
+      color: red;
+    }
+
+    .gettingHotter {
+      background-color: orange;
+      color: white;
+    }
+
+    .hot {
+      background-color: red; //rgba(255, 255-43-43, 255-43-43, 0.75);
+      color: white;
+    }
+
+    .inputError {
+      background-color: red;
+      color: white;
+    }
+
+    .hint {
+      background-color: yellow;
+      color: black;
+
+    }
+
+    .buoys-used {
+      position: relative;
+      display: block;
+      margin: 5px auto;
+      width: 90%;
+      border: 1px solid rgb(30, 255, 0);
+      background-color: rgba(0, 0, 0, 0.5);
+      overflow-y: scroll;
+
+      #guessLog {
+        position: relative;
+        margin: 5px;
+        text-align: center;
+
+        .guessHolder {
+          float: left;
+          height: 16px;
+          width: 16px;
+          text-align: center;
+          vertical-align: bottom;
+          margin: 5px;
+          padding: 5px;
+          border-radius: 100%;
+          color: white;
+        }
+
+      }
+    }
+  }
+
+  #torpedo {
+    outline: none;
+    border: 1px solid black;
+    background-color: red;
+    transition: background-color 0.1s color 0.1s box-shadow 0.1s;
+    -webkit-transition: background-color 0.1s color 0.1s box-shadow 0.1s;
+  }
+
+  #torpedo:active {
+    background-color: #FF2F00;
+    color: white;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5) inset;
+  }
+
+  .controls {
+    .game-button-main {
+      // float: : left;
+      height: 80px;
+      width: 80px;
+      border-radius: 100%;
+      border: 1px solid rgba(0, 0, 0, 1);
+      transition: all 0.1s;
+      -webkit-transition: all 0.1s;
+    }
+
+    .game-button-main:focus{
+      outline: none;
+    }
+
+    .game-button-main:active {
+      // font-size: 0.9em;
+      box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5) inset;
+
+
+    }
+
+    .hint {
+      background-color: #ffc600;
+    }
+
+    .ping {
+      background-color: green;
+    }
+
+    .reset {
+      background-color: orangered;
+    }
+
+    .ping:active {
+      background-color: lightgreen;
+    }
+
+    .hint:active {
+      background-color: khaki;
+    }
+
+    .reset:active {
+      background-color: darkorange;
+    }
+
+  }
+}

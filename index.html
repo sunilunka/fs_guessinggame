@@ -11,36 +11,56 @@
   <body>
     <section id="intro-panel">
       <div class="intro-panel-wrapper">
-      <header class="intro-panel-header">
-        <h1>YOUR FLEET IS UNDER ATTACK!<h1>
+        <header class="intro-panel-header">
+          <h1>YOUR FLEET IS UNDER ATTACK!<h1>
 
-      </header>
-      <div class="intro-panel-detail">
-          <p>This is a classic hot and cold game with a maritime feel...</p>
-          <p>A rogue submarine is terrorizing your fleet!</p>
-          <p>You are on an anti-submarine helicopter. You have 100 sonobuoys in the water, but due to a equipment glitch can only ping each one once</p>
-          <p>Each time you ping a sonobuoy it will give you an indicaton of whether you are getting hotter (closer to the sub) or colder (further away).</p>
-          <p>The catch...each time you aren't successful, the submarine could damage another ship...15 ships damaged and the mission is failed.</p>
-          <p>Once you have the 'hottest' sonobuoy in contact: DROP THE TORPEDO TO WIN!</p>
-          <p>Using the hint button calls the alert Anti-submarine aicraft, and gives you the closest sonobuoy to attack, but you get six ships damaged in the process. It takes a while for the aircraft to get to the fleet. Use it wisely.</p>
+        </header>
+        <div class="intro-panel-detail">
+          <p>
+            A rogue submarine is terrorizing your fleet!
+          </p>
+          <p>As an operator on an antisubmarine helicopter, you need to find the sub...
+          </p>
+          <p>
+            You have 100 sonobuoys to ping...find the one with the strongest echoes and drop the torpedo to win.
+          </p>
+          <p>Don't muck around, each wrong guess is another ship damaged!</p>
+          <p>Good luck!</p>
+        </div>
+        <footer class="controls">
+          <button id="start-game" class="game-button-option">START</button>
+        </footer>
       </div>
-      <footer class="controls">
-        <button class="game-button-main"></button>
-      </footer>
-    </div>
-      
     </section>
-    <section class="game-panel">
+
+    <section id="success-panel" class="outcome">
+      <header>
+      </header>
+      <video src="successMovie.f4v" autoplay></video>
+      <footer>
+        <button class="play-again game-button-option">Play Again...</button>
+      </footer>
+    </section>
+    <section id="fail-panel" class="outcome">
+      <header>
+        <h1>MISSION FAILED...</h1>
+        <h2>ALL THE SHIPS HAVE BEEN DISABLED OR SUNK.</h2>
+      </header>
+      <footer>
+        <button class="play-again game-button-option">Play Again...</button>
+      </footer>
+    </section>
+    <section id="main-game" class="game-panel game-panel-start">
       <header class="titlePanel">
         <h3>Sink the Submarine!</h3>
       </header>
       <div class="fleetHolder">
         <div class="fleetStatus">
           <div class="img-placeholder">
-            <img src="ship.svg"></img>
+            <img src="images/ship.svg"></img>
           </div>
           <div class="fleetRemaining">
-            <h1>25 of 30</h1>
+            <h1 id="guessesLeft">20</h1>
           </div>
           <div class="fleetCaption">
             <h3>ships <br> afloat</h3>
@@ -50,20 +70,23 @@
       <div class="inputContainer">  
         <input type="text" value="" maxlength="3"></input>
         <div class="buoys-used">
-          <p class="guess"><span class="warm"> 12</span><span class="cold"> 14</span><span class="freezing"> 09</span><span class="hot"> 92</span></p>
+          <div id="guessLog">
+            <div class="clearfix"></div>
+          </div>
         </div>
-        <div class="buoy-message">
-          <h2>That buoy is cold - no echoes!</h2>
+        <div id="userMessage" class="">
+          <h3></h3>
+          <h4></h4>
         </div>
       </div>
       <footer class="controls">
-        <button class="game-button-main ping" title="Click this once you have entered a buoy number!">PING</button>
-        <button class="game-button-main hint">HINT</button>
-        <button class="game-button-main reset">RESET</button>        
-        <!--<button class="game-button-main torpedo" disabled="true">FIRE</button>-->
+        <button id="ping" class="game-button-main ping" title="Click this once you have entered a buoy number!">PING</button>
+        <button id="hint" class="game-button-main hint">HINT</button>
+        <button id="reset" class="game-button-main reset">RESET</button>        
+        <button id="torpedo" disabled="true">DROP WEAPON</button>
       </footer>
     </section>
-    <!--<script type="text/javascript" src="jquery.js"></script>
-    <script type="text/javascript" src="fsgg.js"></script>-->
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="fsgg.js"></script>
   </body>
 </html>

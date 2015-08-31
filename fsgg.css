@@ -1,4 +1,12 @@
 @media (min-width: 320px) and (max-width: 480px) {
+  #success-panel video {
+    margin: 100px auto;
+    width: 90%; }
+
+  #intro-panel .intro-panel-wrapper .intro-panel-detail {
+    margin: 10px auto;
+    width: 90%; }
+
   .game-panel {
     width: 320px;
     margin: 10px auto; }
@@ -41,9 +49,22 @@
     .controls .game-button-main {
       position: relative;
       display: inline-block; }
-    .controls .torpedo {
-      display: none; } }
+    .controls #torpedo {
+      position: absolute;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px; } }
 @media (min-width: 481px) and (max-width: 767px) {
+  #success-panel video {
+    margin: 50px auto;
+    width: 90%; }
+
+  #intro-panel .intro-panel-wrapper .intro-panel-detail {
+    margin: 10px auto;
+    width: 90%; }
+
   .game-panel {
     width: 480px;
     height: 400px;
@@ -89,9 +110,24 @@
     position: relative;
     display: block;
     margin: 5px; }
+    .controls #torpedo {
+      position: absolute;
+      display: none;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px; }
     .controls .torpedo {
       display: inline-block; } }
 @media (min-width: 768px) {
+  #success-panel video {
+    margin: 10px auto;
+    width: 90%; }
+
+  #intro-panel .intro-panel-wrapper .intro-panel-detail {
+    margin: 10px auto;
+    width: 50%; }
+
   .game-panel {
     width: 80%;
     margin: 20px auto; }
@@ -137,7 +173,14 @@
       height: auto;
       text-align: center; }
       .game-panel .controls .game-button-main {
-        margin: 5px; } }
+        margin: 5px; }
+    .game-panel #torpedo {
+      position: relative;
+      left: -404px;
+      width: 400px;
+      display: none;
+      height: 50px;
+      margin: 5px auto; } }
 body {
   background-image: url("bg_landscape.jpg");
   background-size: cover;
@@ -149,27 +192,75 @@ body {
   -webkit-box-sizing: border-box;
   font-family: helvetica, arial, courier; }
 
-.freezing {
-  color: aqua; }
+.outcome {
+  position: fixed;
+  display: none;
+  left: 0px;
+  top: 0px;
+  z-index: 2000;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: white; }
 
-.cold {
-  color: blue; }
+.game-button-option {
+  position: relative;
+  outline: none;
+  margin: 10px auto;
+  background-color: rgba(255, 0, 0, 0.75);
+  color: white;
+  padding: 20px;
+  border-radius: 5%;
+  border: 1px solid black;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s; }
 
-.warm {
-  color: orange; }
+.game-button-option:active {
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8) inset;
+  color: black;
+  background-color: red; }
 
-.hot {
-  color: crimson; }
+.game-button-option:hover {
+  background-color: orange; }
+
+.clearfix {
+  clear: both;
+  width: 100%;
+  height: 1px; }
+
+#fail-panel {
+  text-align: center;
+  background-image: url("images/missionFail.gif");
+  background-size: cover;
+  background-position: center;
+  background-origin: border-box;
+  background-repeat: no-repeat;
+  background-attachment: fixed; }
+  #fail-panel header {
+    position: relative;
+    margin: 200px auto;
+    width: 50%; }
+
+#success-panel {
+  background-color: black; }
+  #success-panel video {
+    position: relative;
+    display: block;
+    height: auto; }
+  #success-panel button {
+    position: relative;
+    display: block;
+    margin: 10px auto; }
 
 #intro-panel {
   position: fixed;
-  display: none;
+  display: block;
   top: 0px;
   left: 0px;
   height: 100%;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.9);
   overflow-y: auto; }
   #intro-panel .intro-panel-wrapper {
     position: relative;
@@ -181,18 +272,25 @@ body {
       position: relative;
       display: block;
       width: 80%;
-      margin: 40px auto; }
+      margin: 40px auto;
+      font-family: Helvetica, Courier, Arial;
+      color: white; }
     #intro-panel .intro-panel-wrapper .intro-panel-detail {
       position: relative;
       display: block;
-      margin: 20px auto;
-      width: 80%;
-      color: white; }
+      margin: 10px auto;
+      color: white;
+      background-color: rgba(12, 54, 100, 0.5);
+      box-shadow: 0px 4px 10px gray;
+      padding: 10px; }
       #intro-panel .intro-panel-wrapper .intro-panel-detail p {
         text-align: left;
-        padding: 10px;
-        background-color: rgba(12, 54, 100, 0.5);
-        box-shadow: 0px 4px 10px gray; }
+        font-family: courier; }
+
+.game-panel-start {
+  filter: blur(4px);
+  -webkit-filter: blur(4px);
+  opacity: 0.4; }
 
 .game-panel {
   position: relative;
@@ -242,21 +340,42 @@ body {
     .game-panel .inputContainer input:focus {
       outline: none;
       background-color: rgba(64, 64, 64, 0.5); }
-    .game-panel .inputContainer .buoy-message {
+    .game-panel .inputContainer #userMessage {
       position: absolute;
       display: none;
-      top: 0px;
+      bottom: 0px;
       left: 0px;
       z-index: 500;
       width: 100%;
-      height: 100%;
-      background-color: rgba(234, 19, 20, 0.5);
-      transition: all 0.5s;
-      -webkit-transition: all 0.5s; }
-      .game-panel .inputContainer .buoy-message h2 {
+      height: 50%; }
+      .game-panel .inputContainer #userMessage h3 {
         position: relative;
         display: block;
-        margin-top: 50px; }
+        margin: 10px; }
+    .game-panel .inputContainer .freezing {
+      background-color: rgba(0, 0, 255, 0.75);
+      color: white; }
+    .game-panel .inputContainer .reallyCold {
+      background-color: #0081d4;
+      color: white; }
+    .game-panel .inputContainer .cold {
+      background-color: #A6CDDB;
+      color: white; }
+    .game-panel .inputContainer .warm {
+      background-color: rgba(249, 249, 14, 0.9);
+      color: red; }
+    .game-panel .inputContainer .gettingHotter {
+      background-color: orange;
+      color: white; }
+    .game-panel .inputContainer .hot {
+      background-color: red;
+      color: white; }
+    .game-panel .inputContainer .inputError {
+      background-color: red;
+      color: white; }
+    .game-panel .inputContainer .hint {
+      background-color: yellow;
+      color: black; }
     .game-panel .inputContainer .buoys-used {
       position: relative;
       display: block;
@@ -265,11 +384,30 @@ body {
       border: 1px solid #1eff00;
       background-color: rgba(0, 0, 0, 0.5);
       overflow-y: scroll; }
-      .game-panel .inputContainer .buoys-used p .guess {
+      .game-panel .inputContainer .buoys-used #guessLog {
         position: relative;
-        margin: 0px;
-        padding: 5px;
-        font-size: 1.2em; }
+        margin: 5px;
+        text-align: center; }
+        .game-panel .inputContainer .buoys-used #guessLog .guessHolder {
+          float: left;
+          height: 16px;
+          width: 16px;
+          text-align: center;
+          vertical-align: bottom;
+          margin: 5px;
+          padding: 5px;
+          border-radius: 100%;
+          color: white; }
+  .game-panel #torpedo {
+    outline: none;
+    border: 1px solid black;
+    background-color: red;
+    transition: background-color 0.1s color 0.1s box-shadow 0.1s;
+    -webkit-transition: background-color 0.1s color 0.1s box-shadow 0.1s; }
+  .game-panel #torpedo:active {
+    background-color: #FF2F00;
+    color: white;
+    box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5) inset; }
   .game-panel .controls .game-button-main {
     height: 80px;
     width: 80px;
@@ -293,10 +431,5 @@ body {
     background-color: khaki; }
   .game-panel .controls .reset:active {
     background-color: darkorange; }
-  .game-panel .controls .torpedo {
-    background-color: rgba(255, 0, 0, 0.5);
-    color: rgba(0, 0, 0, 0.5); }
-  .game-panel .controls .torpedo-enabled {
-    background-color: red; }
 
 /*# sourceMappingURL=fsgg.css.map */
