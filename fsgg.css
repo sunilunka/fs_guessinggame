@@ -1,4 +1,12 @@
 @media (min-width: 320px) and (max-width: 480px) {
+  #success-panel video {
+    margin: 100px auto;
+    width: 90%; }
+
+  #intro-panel .intro-panel-wrapper .intro-panel-detail {
+    margin: 10px auto;
+    width: 90%; }
+
   .game-panel {
     width: 320px;
     margin: 10px auto; }
@@ -49,6 +57,14 @@
       top: 0px;
       left: 0px; } }
 @media (min-width: 481px) and (max-width: 767px) {
+  #success-panel video {
+    margin: 50px auto;
+    width: 90%; }
+
+  #intro-panel .intro-panel-wrapper .intro-panel-detail {
+    margin: 10px auto;
+    width: 90%; }
+
   .game-panel {
     width: 480px;
     height: 400px;
@@ -104,6 +120,14 @@
     .controls .torpedo {
       display: inline-block; } }
 @media (min-width: 768px) {
+  #success-panel video {
+    margin: 10px auto;
+    width: 90%; }
+
+  #intro-panel .intro-panel-wrapper .intro-panel-detail {
+    margin: 10px auto;
+    width: 50%; }
+
   .game-panel {
     width: 80%;
     margin: 20px auto; }
@@ -206,7 +230,7 @@ body {
 
 #fail-panel {
   text-align: center;
-  background-image: url("missionFail.gif");
+  background-image: url("images/missionFail.gif");
   background-size: cover;
   background-position: center;
   background-origin: border-box;
@@ -216,6 +240,17 @@ body {
     position: relative;
     margin: 200px auto;
     width: 50%; }
+
+#success-panel {
+  background-color: black; }
+  #success-panel video {
+    position: relative;
+    display: block;
+    height: auto; }
+  #success-panel button {
+    position: relative;
+    display: block;
+    margin: 10px auto; }
 
 #intro-panel {
   position: fixed;
@@ -244,7 +279,6 @@ body {
       position: relative;
       display: block;
       margin: 10px auto;
-      width: 50%;
       color: white;
       background-color: rgba(12, 54, 100, 0.5);
       box-shadow: 0px 4px 10px gray;

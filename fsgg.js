@@ -1,11 +1,10 @@
 ;(function(window, document, $){
 
-  console.log("Script running.");
-
   var Game = function(){
     this.numberToGuess = this.generateNumber();
-    this.attemptsRemaining = 2;
+    this.attemptsRemaining = 20;
     this.playerGuesses = [];
+    console.log(this.numberToGuess);
   }
 
   Game.prototype.generateNumber = function(){
@@ -159,7 +158,6 @@
 
   function initGame(){
     var game = new Game();
-
     var reset = function(){
       $("#guessLog").empty();
       $("#hint, #ping").prop("disabled", false); 
@@ -172,9 +170,8 @@
       if($(".outcome:visible")){
         $(".outcome").fadeOut("fast");
       };
-
     }
-    console.log(game.numberToGuess);
+
     $("#ping").click(function(e) { 
       e.preventDefault();
       game.checkGuess($("input").val());
@@ -185,6 +182,11 @@
         game.checkGuess($(this).val());
 
       };
+    })
+
+    $("#torpedo").click(function(e){
+      e.preventDefault()
+      $("#success-panel").fadeIn("slow");
     })
 
     $("#hint").click(function(e){
