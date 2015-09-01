@@ -4,7 +4,6 @@
     this.numberToGuess = this.generateNumber();
     this.attemptsRemaining = 20;
     this.playerGuesses = [];
-
   }
 
   Game.prototype.generateNumber = function(){
@@ -208,6 +207,8 @@
       e.preventDefault();
       $("#intro-panel").fadeOut("slow", function(){
         $("#main-game").removeClass("game-panel-start");
+        $("input").prop("disabled", false)
+          .focus();
       });
     })
   };
